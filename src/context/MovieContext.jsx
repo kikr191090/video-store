@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const MovieContext = createContext();
 
-export function MovieProvider({ children }) {
+
   // Películas predefinidas
   const initialMovies = [
     {
@@ -42,8 +42,8 @@ export function MovieProvider({ children }) {
       image: "https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
     },
   ];
-
-  const [movies, setMovies] = useState([]);
+export function MovieProvider({ children }) {
+  const [movies, setMovies] = useState(initialMovies);//Estado Inicial
   const [cart, setCart] = useState([]);
 
   // Cargar datos del localStorage o usar películas predefinidas
@@ -51,7 +51,10 @@ export function MovieProvider({ children }) {
     const savedMovies =
       JSON.parse(localStorage.getItem("movies")) || initialMovies;
     const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setMovies(savedMovies);
+
+    if (savedMovies) {
+      setMovies(savedMovies);
+    }
     setCart(savedCart);
   }, []);
 

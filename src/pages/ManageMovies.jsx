@@ -18,8 +18,7 @@ export default function ManageMovies() {
       <div className="movie-list">
         {movies.map((movie) => (
           <div key={movie.id} className="movie-card">
-            {" "}
-            {/* key única */}
+             {/* key única */}
             <h3>{movie.title}</h3>
             <button onClick={() => setEditingMovie(movie)}>Editar</button>
             <button onClick={() => deleteMovie(movie.id)}>Eliminar</button>
