@@ -7,31 +7,43 @@ export function MovieProvider({ children }) {
   const initialMovies = [
     {
       id: 1, // Único
-      title: 'Stranger Things',
+      title: "Stranger Things",
       year: 2016,
-      genre: 'Sci-Fi',
+      genre: "Sci-Fi",
+      director: "The Duffer Brothers",
+      description:
+        "Un grupo de amigos se enfrenta a fenómenos sobrenaturales en su pequeño pueblo.",
+      trailerUrl: "https://www.youtube.com/watch?v=b9EkMc79ZSU",
       rentPrice: 3.99,
       salePrice: 14.99,
-      image: 'https://image.tmdb.org/t/p/w500/xYZHxQyxkp1e2TKgP3NvImZxqG7.jpg'
+      image:
+        "https://https://image.tmdb.org/t/p/w1280/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg",
     },
     {
       id: 2, // Único
-      title: 'The Witcher',
+      title: "The Witcher",
       year: 2019,
-      genre: 'Fantasy',
+      genre: "Fantasy",
+      director: "Lauren Schmidt Hissrich",
+      description:
+        "Geralt de Rivia, un cazador de monstruos, lucha por encontrar su lugar en un mundo donde las personas suelen ser más malvadas que las bestías.",
+      trailerUrl: "https://www.youtube.com/watch?v=ETY44yszyNc",
       rentPrice: 4.99,
       salePrice: 19.99,
-      image: 'https://image.tmdb.org/t/p/w500/zrPpUlehQaBf8YX2NrVrKK8IEpf.jpg'
+      image: "https://image.tmdb.org/t/p/w500/zrPpUlehQaBf8YX2NrVrKK8IEpf.jpg",
     },
     {
       id: 3, // Único
-      title: 'Breaking Bad',
+      title: "Breaking Bad",
       year: 2008,
-      genre: 'Drama',
+      genre: "Drama",
+      director: "Vince Gilligan",
+      description: "Un profesor de química con cáncer se convierte en fabricante de metanfetaminas para asegurar el futuro de su familia.",
+      trailerUrl: "https://www.youtube.com/watch?v=HhesaQXLuRY",
       rentPrice: 2.99,
       salePrice: 9.99,
-      image: 'https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg'
-    }
+      image: "https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
+    },
   ];
 
   const [movies, setMovies] = useState([]);

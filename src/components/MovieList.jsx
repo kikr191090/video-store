@@ -44,6 +44,16 @@ ID de transacción: ${transactionId}`);
             <h3 className="movie-title">{movie.title}</h3>
             <p className="movie-year">Año: {movie.year}</p>
             <p className="movie-genre">Género: {movie.genre}</p>
+            <p className="movie-director">Director: {movie.director}</p>
+            <p className="movie-description">{movie.description}</p>
+            <a
+              href={movie.trailerUrl}
+              target="_blank"
+              rel="nooper noreferrer"
+              className="trailer-link"
+            >
+              Ver Trailer
+            </a>
             <p className="movie-price">
               {actionType === "rent"
                 ? `Alquiler: $${movie.rentPrice}/día`

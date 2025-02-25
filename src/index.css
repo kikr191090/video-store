@@ -366,3 +366,22 @@ footer p {
   color: white !important;
 }
 
+/* Estilos para los nuevos campos*/
+.movie-director, 
+.movie-description {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 0.2rem 0;
+}
+
+.trailer-link {
+  color: #e50914;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.trailer-link:hover {
+  text-decoration: underline;
+}

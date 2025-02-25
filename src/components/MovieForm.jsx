@@ -6,6 +6,9 @@ export default function MovieForm({ onSubmit, initialMovie, clearForm }) {
     title: "",
     year: new Date().getFullYear(),
     genre: "",
+    director: "",
+    description: "",
+    trailerUrl:"",
     rentPrice: 0,
     salePrice: 0,
     image: null,
@@ -35,6 +38,9 @@ export default function MovieForm({ onSubmit, initialMovie, clearForm }) {
       title: "",
       year: new Date().getFullYear(),
       genre: "",
+      director: "",
+      description: "",
+      trailerUrl:"",
       rentPrice: 0,
       salePrice: 0,
       image: null,
@@ -71,6 +77,34 @@ export default function MovieForm({ onSubmit, initialMovie, clearForm }) {
           type="text"
           value={movie.genre}
           onChange={(e) => setMovie({ ...movie, genre: e.target.value })}
+          required
+        />
+      </div>
+
+      <div className="form-group">
+        <label>Director:</label>
+        <input
+          type="text"
+          value={movie.director}
+          onChange={(e) => setMovie({...movie, director: e.target.value})}
+        />
+      </div>
+
+      <div className="form-group">
+        <label>Descripción:</label>
+        <textarea
+          value={movie.description}
+          onChange={(e) => setMovie({ ...movie, description: e.target.value })}
+          required
+        />  
+      </div>
+
+      <div className="form-group">
+        <label>URL del Trailer:</label>
+        <input
+          type="url"
+          value={movie.trailerUrl}
+          onChange={(e) => setMovie({ ...movie, trailerUrl: e.target.value })}
           required
         />
       </div>
