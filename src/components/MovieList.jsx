@@ -49,7 +49,7 @@ ID de transacción: ${transactionId}`);
             <a
               href={movie.trailerUrl}
               target="_blank"
-              rel="nooper noreferrer"
+              rel="noopener noreferrer"
               className="trailer-link"
             >
               Ver Trailer
