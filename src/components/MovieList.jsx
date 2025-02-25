@@ -47,7 +47,7 @@ ID de transacción: ${transactionId}`);
             <p className="movie-director">Director: {movie.director}</p>
             <p className="movie-description">{movie.description}</p>
             <a
-              href={movie.trailerUrl || "https://www.youtube.com"}
+              href={movie.trailerUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="trailer-link"
