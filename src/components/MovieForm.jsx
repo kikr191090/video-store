@@ -116,7 +116,7 @@ export default function MovieForm({ onSubmit, initialMovie, clearForm }) {
           value={movie.rentPrice}
           onChange={(e) => setMovie({ ...movie, rentPrice: e.target.value })}
           min="0"
-          step="0"
+          step="0.00"
           required
         />
       </div>
@@ -128,7 +128,7 @@ export default function MovieForm({ onSubmit, initialMovie, clearForm }) {
           value={movie.salePrice}
           onChange={(e) => setMovie({ ...movie, salePrice: e.target.value })}
           min="0"
-          step="0"
+          step="0.00"
           required
         />
       </div>

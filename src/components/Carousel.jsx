@@ -10,8 +10,7 @@ export default function Carousel() {
     {
       id: 1,
       title: "Oferta Especial: Stranger Things",
-      image:
-        "https://image.tmdb.org/t/p/w1400_and_h450_face/xYZHxQyxkp1e2TKgP3NvImZxqG7.jpg",
+      image: "https://image.tmdb.org/t/p/w1280/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg",
       description: "Alquila por 3 días al precio de 2",
     },
     {

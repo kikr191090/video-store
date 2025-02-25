@@ -11,8 +11,7 @@ export function MovieProvider({ children }) {
       year: 2016,
       genre: "Sci-Fi",
       director: "The Duffer Brothers",
-      description:
-        "Un grupo de amigos se enfrenta a fenómenos sobrenaturales en su pequeño pueblo.",
+      description:"Un grupo de amigos se enfrenta a fenómenos sobrenaturales en su pequeño pueblo.",
       trailerUrl: "https://www.youtube.com/watch?v=b9EkMc79ZSU",
       rentPrice: 3.99,
       salePrice: 14.99,
@@ -24,8 +23,7 @@ export function MovieProvider({ children }) {
       year: 2019,
       genre: "Fantasy",
       director: "Lauren Schmidt Hissrich",
-      description:
-        "Geralt de Rivia, un cazador de monstruos, lucha por encontrar su lugar en un mundo donde las personas suelen ser más malvadas que las bestías.",
+      description:"Geralt de Rivia, un cazador de monstruos, lucha por encontrar su lugar en un mundo donde las personas suelen ser más malvadas que las bestías.",
       trailerUrl: "https://www.youtube.com/watch?v=ETY44yszyNc",
       rentPrice: 4.99,
       salePrice: 19.99,

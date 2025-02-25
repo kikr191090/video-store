@@ -46,15 +46,13 @@ ID de transacción: ${transactionId}`);
             <p className="movie-genre">Género: {movie.genre}</p>
             <p className="movie-director">Director: {movie.director}</p>
             <p className="movie-description">{movie.description}</p>
-            <a
-              href={movie.trailerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => window.open(movie.trailerUrl, "_blank")}
               className="trailer-link"
-              onClick={() => console.log("URL del trailer:", movie.trailerUrl)}
             >
               Ver Trailer
-            </a>
+            </button>
+
             <p className="movie-price">
               {actionType === "rent"
                 ? `Alquiler: $${movie.rentPrice}/día`
