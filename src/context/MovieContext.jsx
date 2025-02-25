@@ -16,8 +16,7 @@ export function MovieProvider({ children }) {
       trailerUrl: "https://www.youtube.com/watch?v=b9EkMc79ZSU",
       rentPrice: 3.99,
       salePrice: 14.99,
-      image:
-        "https://https://image.tmdb.org/t/p/w1280/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg",
+      image:"https://image.tmdb.org/t/p/w1280/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg",
     },
     {
       id: 2, // Único

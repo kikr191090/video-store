@@ -51,6 +51,7 @@ ID de transacción: ${transactionId}`);
               target="_blank"
               rel="noopener noreferrer"
               className="trailer-link"
+              onClick={() => console.log("URL del trailer:", movie.trailerUrl)}
             >
               Ver Trailer
             </a>
