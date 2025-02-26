@@ -3,24 +3,32 @@ import { useMovies } from "../context/MovieContext";
 import MovieList from "../components/MovieList";
 import Cart from "../components/Cart";
 import Carousel from "../components/Carousel";
+import SearchBar from "../components/SearchBar";
 
 export default function Store() {
-  const { movies,cart, addToCart, removeFromCart } = useMovies();
+  const { movies, cart, addToCart, removeFromCart } = useMovies();
   const [selectedType, setSelectedType] = useState("rent");
+  const [searchTerm, setSearchTerm] = useState("");
 
-  // Selecciona las Primeras 5 peliculas como destacadas
-  const featuredMovies = movies.slice(0, 5);
+  // Filtrar películas según el término de búsqueda
+  const filteredMovies = movies.filter((movie) =>
+    movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
-
+  // Selecciona las primeras 5 películas como destacadas
+  const featuredMovies = filteredMovies.slice(0, 5);
 
   return (
     <div>
       {/* Carrusel de ofertas */}
       <Carousel />
 
-      {/* Seccion de peliculas destacadas */}
+      {/* Buscador */}
+      <SearchBar onSearch={setSearchTerm} />
+
+      {/* Sección de películas destacadas */}
       <div className="featured-section">
-        <h2>Peliculas Destacadas</h2>
+        <h2>Películas Destacadas</h2>
         <MovieList
           movies={featuredMovies}
           onAction={addToCart}
@@ -28,6 +36,7 @@ export default function Store() {
         />
       </div>
 
+      {/* Todas las películas */}
       <div className="content">
         <div style={{ flex: 1 }}>
           <div style={{ marginBottom: "20px" }}>
@@ -50,12 +59,12 @@ export default function Store() {
             </button>
           </div>
           <MovieList
-            movies={movies}
+            movies={filteredMovies}
             onAction={addToCart}
             actionType={selectedType}
           />
         </div>
-        <Cart  />
+        <Cart />
       </div>
     </div>
   );

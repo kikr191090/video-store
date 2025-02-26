@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { useMovies } from "../context/MovieContext";
 
-export default function MovieList({ onAction, actionType }) {
+export default function MovieList({ movies, onAction, actionType }) {
   const [rentDays, setRentDays] = useState(1);
-  const { movies, addToCart } = useMovies();
 
   const handleAction = (movie, type, days) => {
-    addToCart(movie, type, days);
+    onAction(movie, type, days);
     if (type === "buy") {
       simulatePurchase(movie);
     }
@@ -54,7 +52,6 @@ ID de transacción: ${transactionId}`);
             >
               Ver Trailer
             </a>
-
             <p className="movie-price">
               {actionType === "rent"
                 ? `Alquiler: $${movie.rentPrice}/día`

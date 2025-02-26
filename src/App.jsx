@@ -7,7 +7,6 @@ export default function App() {
   return (
     <MovieProvider>
       <BrowserRouter>
-        {/* Menú de navegación */}
         <nav>
           <div className="logo">Video Store</div>
           <div>
@@ -16,13 +15,11 @@ export default function App() {
           </div>
         </nav>
 
-        {/* Contenido principal */}
         <Routes>
           <Route path="/" element={<Store />} />
           <Route path="/manage" element={<ManageMovies />} />
         </Routes>
 
-        {/* Pie de página */}
         <footer>
           <p>Todos los derechos reservados &copy; {new Date().getFullYear()}</p>
         </footer>

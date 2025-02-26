@@ -31,10 +31,19 @@ nav a:hover {
   color: #e50914;
 }
 
+/* Logo (opcional) */
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e50914;
+}
+
 /* Contenedor principal */
 .content {
   margin-top: 80px;
   padding: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 /* Lista de películas */
@@ -54,247 +63,6 @@ nav a:hover {
   border-radius: 4px;
 }
 
-/* Tarjetas de películas */
-.movie-card {
-  position: relative;
-  min-width: 200px;
-  height: 300px;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-}
-
-.movie-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-}
-
-.movie-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.movie-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
-  padding: 20px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.movie-card:hover .movie-info {
-  opacity: 1;
-}
-
-.movie-title {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.movie-year {
-  font-size: 14px;
-  color: #ccc;
-}
-
-.movie-actions {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-}
-
-.movie-actions button {
-  background-color: #e50914;
-  border: none;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s;
-}
-
-.movie-actions button:hover {
-  background-color: #b20710;
-}
-
-/* Carrito */
-.cart {
-  background-color: #1f1f1f;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  margin-left: 20px;
-  width: 300px;
-}
-
-.cart h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #ccc;
-}
-
-.cart-item {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #333;
-}
-
-.cart-item h4 {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #ccc;
-}
-
-.cart-item p {
-  margin: 0.3rem 0;
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-.cart-item button {
-  background-color: #e50914;
-  border: none;
-  color: #ccc;
-  padding: 5px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-}
-
-.cart-item button:hover {
-  background-color: #b20710;
-}
-
-.checkout-button {
-  background-color: #28a745;
-  border: none;
-  color: #ccc;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-.checkout-button:hover {
-  background-color: #218838;
-}
-
-/* Estilos para el formulario */
-.movie-form {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #1f1f1f;
-  border-radius: 8px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  color: #ccc;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #333;
-  background-color: #2d2d2d;
-  color: white;
-}
-
-.image-preview {
-  max-width: 100%;
-  margin-top: 10px;
-  border-radius: 4px;
-}
-
-/* Mejoras en los botones */
-button {
-  background-color: #e50914;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #b20710;
-}
-
-/* Mejoras en el select */
-select {
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #333;
-  background-color: #2d2d2d;
-  color: white;
-}
-/* Estilos para el menú de navegación */
-nav {
-  background-color: #141414;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 1rem;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #e50914;
-}
-
-/* Logo (opcional) */
-nav .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #e50914;
-}
-
-/* Estilos para el pie de página */
-footer {
-  background-color: #141414;
-  color: white;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
-  border-top: 1px solid #333;
-}
-
-footer p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #888;
-}
-
 /* Estilos para las tarjetas de películas */
 .movie-card {
   position: relative;
@@ -305,17 +73,27 @@ footer p {
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
   background-color: #1f1f1f;
+  border: 1px solid #333;
+  transition: transform 0.3s ease,
+  box-shadow 0.3s ease,
+  border-color 0.3s ease;
 }
 
 .movie-card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  border-color: #e50914;
 }
 
 .movie-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: opacity 0.3s;
+}
+
+.movie-card:hover img {
+  opacity: 0.8;
 }
 
 .movie-info {
@@ -337,18 +115,64 @@ footer p {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: white;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.movie-year, .movie-genre, .movie-price {
+.movie-year, .movie-genre, .movie-price, .movie-director, .movie-description {
   font-size: 0.9rem;
   color: #ccc;
   margin: 0.2rem 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.movie-description {
+  white-space: normal; /* Permitir múltiples líneas */
+  max-height: 60px; /* Limitar la altura para evitar desbordamiento */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Mostrar solo 3 líneas */
+  -webkit-box-orient: vertical;
+}
+
+.trailer-link {
+  color: #e50914;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.trailer-link:hover {
+  text-decoration: underline;
 }
 
 .movie-actions {
   margin-top: 1rem;
   display: flex;
   gap: 0.5rem;
+}
+
+.movie-actions button {
+  background-color: #e50914;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.movie-actions button:hover {
+  background-color: #b20710;
+}
+
+.movie-card:hover .movie-title {
+  color: #e50914;
 }
 
 /* Estilos para el carrusel */
@@ -412,22 +236,103 @@ footer p {
   color: white !important;
 }
 
-/* Estilos para los nuevos campos*/
-.movie-director, 
-.movie-description {
+/* Estilos para el buscador */
+.search-bar {
+  margin: 20px 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #2d2d2d;
+  color: white;
+}
+
+.search-bar input::placeholder {
+  color: #888;
+}
+
+/* Estilos para el carrito */
+.cart {
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 8px;
+  margin-left: 20px;
+  width: 300px;
+}
+
+.cart h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.cart-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.cart-item h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.cart-item p {
+  margin: 0.3rem 0;
   font-size: 0.9rem;
   color: #ccc;
-  margin: 0.2rem 0;
 }
 
-.trailer-link {
-  color: #e50914;
-  text-decoration: none;
+.cart-item button {
+  background-color: #e50914;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.cart-item button:hover {
+  background-color: #b20710;
+}
+
+.checkout-button {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.checkout-button:hover {
+  background-color: #218838;
+}
+
+/* Estilos para el pie de página */
+footer {
+  background-color: #141414;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid #333;
+}
+
+footer p {
+  margin: 0;
   font-size: 0.9rem;
-  display: block;
-  margin: 0.5rem 0;
-}
-
-.trailer-link:hover {
-  text-decoration: underline;
+  color: #888;
 }

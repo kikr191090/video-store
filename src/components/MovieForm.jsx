@@ -8,7 +8,7 @@ export default function MovieForm({ onSubmit, initialMovie, clearForm }) {
     genre: "",
     director: "",
     description: "",
-    trailerUrl:"",
+    trailerUrl: "",
     rentPrice: 0,
     salePrice: 0,
     image: null,
@@ -40,7 +40,7 @@ export default function MovieForm({ onSubmit, initialMovie, clearForm }) {
       genre: "",
       director: "",
       description: "",
-      trailerUrl:"",
+      trailerUrl: "",
       rentPrice: 0,
       salePrice: 0,
       image: null,
@@ -86,7 +86,8 @@ export default function MovieForm({ onSubmit, initialMovie, clearForm }) {
         <input
           type="text"
           value={movie.director}
-          onChange={(e) => setMovie({...movie, director: e.target.value})}
+          onChange={(e) => setMovie({ ...movie, director: e.target.value })}
+          required
         />
       </div>
 
@@ -96,7 +97,7 @@ export default function MovieForm({ onSubmit, initialMovie, clearForm }) {
           value={movie.description}
           onChange={(e) => setMovie({ ...movie, description: e.target.value })}
           required
-        />  
+        />
       </div>
 
       <div className="form-group">
@@ -116,7 +117,7 @@ export default function MovieForm({ onSubmit, initialMovie, clearForm }) {
           value={movie.rentPrice}
           onChange={(e) => setMovie({ ...movie, rentPrice: e.target.value })}
           min="0"
-          step="0.00"
+          step="0.01"
           required
         />
       </div>
@@ -128,7 +129,7 @@ export default function MovieForm({ onSubmit, initialMovie, clearForm }) {
           value={movie.salePrice}
           onChange={(e) => setMovie({ ...movie, salePrice: e.target.value })}
           min="0"
-          step="0.00"
+          step="0.01"
           required
         />
       </div>
