@@ -5,13 +5,28 @@ import Cart from "../components/Cart";
 import Carousel from "../components/Carousel";
 
 export default function Store() {
-  const { cart, addToCart, removeFromCart } = useMovies();
+  const { movies,cart, addToCart, removeFromCart } = useMovies();
   const [selectedType, setSelectedType] = useState("rent");
+
+  // Selecciona las Primeras 5 peliculas como destacadas
+  const featuredMovies = movies.slice(0, 5);
+
+
 
   return (
     <div>
       {/* Carrusel de ofertas */}
       <Carousel />
+
+      {/* Seccion de peliculas destacadas */}
+      <div className="featured-section">
+        <h2>Peliculas Destacadas</h2>
+        <MovieList
+          movies={featuredMovies}
+          onAction={addToCart}
+          actionType={selectedType}
+        />
+      </div>
 
       <div className="content">
         <div style={{ flex: 1 }}>
@@ -34,9 +49,13 @@ export default function Store() {
               Comprar
             </button>
           </div>
-          <MovieList onAction={addToCart} actionType={selectedType} />
+          <MovieList
+            movies={movies}
+            onAction={addToCart}
+            actionType={selectedType}
+          />
         </div>
-        <Cart items={cart} onRemove={removeFromCart} />
+        <Cart  />
       </div>
     </div>
   );

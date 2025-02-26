@@ -1,22 +1,32 @@
-/* eslint-disable react/prop-types */
-export default function Cart({ items, onRemove }) {
+import { useMovies } from "../context/MovieContext";
+
+export default function Cart(){
+  const { cart, removeFromCart, checkout } = useMovies() 
+
+  const total = cart.reduce((sum, item) => sum + item.total, 0);
+
+  const roundedTotal = Math.round(total * 100) / 100
+
   return (
     <div className="cart">
       <h2>Carrito de Compras</h2>
-      {items.length === 0 ? (
+      {cart.length === 0 ? (
         <p>El carrito está vacío</p>
       ) : (
         <>
-          {items.map((item, index) => (
-            <div key={index} className="cart-item">
+          {cart.map(item => (
+            <div key={`${item.id}-${item.type}`} className="cart-item">
               <h4>{item.title}</h4>
               <p>Tipo: {item.type === "rent" ? "Alquiler" : "Venta"}</p>
               {item.type === "rent" && <p>Días: {item.days}</p>}
-              <p>Total: ${item.total}</p>
-              <button onClick={() => onRemove(index)}>Eliminar</button>
+              <p>Total: ${item.total.toFixed(2)}</p>
+              <button onClick={() => removeFromCart(item.id)}>Eliminar</button>
             </div>
           ))}
-          <h3>Total: ${items.reduce((sum, item) => sum + item.total, 0)}</h3>
+            <h3>Total: ${roundedTotal.toFixed(2)}</h3>
+            <button onClick={checkout} className="checkout-button">
+              Finalizar Compra
+            </button>
         </>
       )}
     </div>

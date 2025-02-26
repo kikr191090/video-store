@@ -125,20 +125,66 @@ nav a:hover {
 /* Carrito */
 .cart {
   background-color: #1f1f1f;
-  padding: 20px;
+  padding: 1rem;
   border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   margin-left: 20px;
   width: 300px;
 }
 
+.cart h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
 .cart-item {
-  margin-bottom: 15px;
-  padding-bottom: 15px;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #333;
 }
 
-.cart-item:last-child {
-  border-bottom: none;
+.cart-item h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+.cart-item p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.cart-item button {
+  background-color: #e50914;
+  border: none;
+  color: #ccc;
+  padding: 5px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.cart-item button:hover {
+  background-color: #b20710;
+}
+
+.checkout-button {
+  background-color: #28a745;
+  border: none;
+  color: #ccc;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.checkout-button:hover {
+  background-color: #218838;
 }
 
 /* Estilos para el formulario */

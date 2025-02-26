@@ -51,10 +51,7 @@ export function MovieProvider({ children }) {
     const savedMovies =
       JSON.parse(localStorage.getItem("movies")) || initialMovies;
     const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    if (savedMovies) {
-      setMovies(savedMovies);
-    }
+    setMovies(savedMovies);
     setCart(savedCart);
   }, []);
 
@@ -67,24 +64,46 @@ export function MovieProvider({ children }) {
   const addMovie = (movie) => setMovies([...movies, movie]);
 
   const editMovie = (id, updatedMovie) =>
-    setMovies(movies.map((movie) => (movie.id === id ? updatedMovie : movie)));
+    setMovies(movies.map(movie => movie.id === id ? updatedMovie : movie));
 
   const deleteMovie = (id) =>
-    setMovies(movies.filter((movie) => movie.id !== id));
+    setMovies(movies.filter(movie => movie.id !== id));
 
   const addToCart = (movie, type, days = 1) => {
-    setCart([
-      ...cart,
-      {
+    const existingItem = cart.find(item => item.id === movie.id && item.type === type)
+
+    if (existingItem) {
+      // Si ya existe, actualiza la cantidad de dias (sola para alquiler)
+      setCart(cart.map(item =>
+        item.id === movie.id && item.type === type
+          ? {
+            ...item,
+            days: item.days + days ,
+            total: type === "rent" ? movie.rentPrice * (item.days + days)
+            : movie.salePrice
+          }
+          : item
+      ));
+    } else {
+      // Si no existe, agregar un nuevo item al carrito
+      setCart([...cart, {
         ...movie,
         type,
         days,
-        total: type === "rent" ? movie.rentPrice * days : movie.salePrice,
-      },
-    ]);
-  };
+        total: type === "rent" ? movie.rentPrice * days : movie.salePrice
+      }]);
+    }
+  }
 
-  const removeFromCart = (index) => setCart(cart.filter((_, i) => i !== index));
+  const removeFromCart = (id) =>
+    setCart(cart.filter(item => item.id !== id));
+
+  const clearCart = () => setCart([])
+
+  const checkout = () => {
+    alert('¡Compra finalizada! Gracias por tu compra.')
+    clearCart()
+  }
 
   return (
     <MovieContext.Provider
@@ -96,6 +115,8 @@ export function MovieProvider({ children }) {
         deleteMovie,
         addToCart,
         removeFromCart,
+        clearCart,
+        checkout
       }}
     >
       {children}
